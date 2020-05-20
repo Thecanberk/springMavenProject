@@ -1,0 +1,64 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: never
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: canberk1996
+    url: jdbc:mysql://127.0.0.1:3306/demo
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  cloud:
+    gcp:
+      storage:
+        enabled: false
+  liquibase:
+    url: jdbc:mysql://127.0.0.1:3306/demo
+    user: root
+    password: canberk1996
+#  mail:
+#    default-encoding: UTF-8
+#    host: smtp.gmail.com
+#    username: zoommaestro123@gmail.com
+#    password: zoommaestro123
+#    port: 587
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#    protocol: smtp
+#    test-connection: false
+#  http:
+#    multipart:
+#      enabled: true
+#  boot:
+#    admin:
+#      notify:
+#        mail:
+#          enabled: false
+#          from: zoommaestro123@gmail.com
+#          to: zoommaestro123@gmail.com
+#maestro:
+#  image:
+#    root:
+#      folder: /var/maestro/cdn
+#  mail:
+#    from: zoommaestro123@gmail.com
+#    bcc: zoommaestro123@gmail.com
+#  url:
+#    base: http://localhost:8080
+#  zoom:
+#    api:
+#      url: https://api.zoom.us/v2
+logging:
+  level:
+    org:
+      zalando:
+        logbook: TRACE

@@ -1,0 +1,92 @@
+databaseChangeLog:
+- changeSet:
+    id: 1589125469575-1
+    author: canberkesmeliler (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: revinfoPK
+            name: rev
+            type: INT
+        - column:
+            name: revtstmp
+            type: BIGINT
+        tableName: revinfo
+- changeSet:
+    id: 1589125469575-2
+    author: canberkesmeliler (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: userPK
+            name: id
+            type: BIGINT
+        - column:
+            name: created_date
+            type: datetime
+        - column:
+            constraints:
+              nullable: false
+            defaultValueNumeric: 0
+            name: version
+            type: BIGINT
+        - column:
+            name: pass_word
+            type: BIGINT
+        - column:
+            name: user_name
+            type: VARCHAR(255)
+        tableName: user
+- changeSet:
+    id: 1589125469575-3
+    author: canberkesmeliler (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: user_audPK
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: user_audPK
+            name: rev
+            type: INT
+        - column:
+            name: revtype
+            type: TINYINT
+        - column:
+            name: created_date
+            type: datetime
+        - column:
+            name: pass_word
+            type: BIGINT
+        - column:
+            name: user_name
+            type: VARCHAR(255)
+        tableName: user_aud
+- changeSet:
+    id: 1589125469575-4
+    author: canberkesmeliler (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: rev
+        baseTableName: user_aud
+        constraintName: FK89ntto9kobwahrwxbne2nqcnr
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: rev
+        referencedTableName: revinfo
+        validate: true
+
