@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/rest/user")
 public class UserController {
@@ -16,18 +17,17 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @CrossOrigin
     @GetMapping("/{username}")
     public UserDTO getUserByUserName(@PathVariable("username") String userName) {
         return userService.getUser(userName);
     }
 
-    @PostMapping("/createuser")
+    @PostMapping("/createUser")
     public UserDTO createUser(@RequestBody UserDTO userDTO){
         return userService.createUser(userDTO);
     }
 
-    @PutMapping("/updatepassword")
+    @PutMapping("/updatePassword")
     public UserDTO updateUserPassWord(@RequestBody UserDTO userDTO){
         return userService.updateUserPassWord(userDTO);
     }

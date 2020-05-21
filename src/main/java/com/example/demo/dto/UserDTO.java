@@ -14,6 +14,16 @@ import org.springframework.stereotype.Service;
 public class UserDTO extends BaseDTO {
 
     private String userName;
-    private Long passWord;
+    private String passWord;
+    private boolean isSuccess;
+    private String responseMessage;
+
+    public UserDTO() {
+    }
+    public UserDTO(boolean isSuccess, String responseMessage) {
+        this.isSuccess = isSuccess;
+        this.responseMessage = responseMessage;
+    }
+
 
 }

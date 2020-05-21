@@ -32,11 +32,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO createUser(UserDTO request) {
-        User user = new User();
-        user.setUserName(request.getUserName());
-        user.setPassWord(request.getPassWord());
-        User savedEntity = userRepository.save(user);
-        return savedEntity.toDTO();
+        if(request.getUserName() != null && request.getPassWord() != null){
+            User existedUser = userRepository.findByUserName(request.getUserName());
+            if(existedUser == null){
+                User user = new User();
+                user.setUserName(request.getUserName());
+                user.setPassWord(request.getPassWord());
+                User savedEntity = userRepository.save(user);
+                UserDTO responseDTO = savedEntity.toDTO();
+                responseDTO.setSuccess(true);
+                responseDTO.setResponseMessage("Başarıyla Kayıt Oldunuz");
+                return responseDTO;
+            } else {
+                return new UserDTO(false, "Kullanıcı Adı Mevcut");
+            }
+        } else{
+            return new UserDTO(false, "Kullanıcı Adı Ya da Şifre Yanlış");
+        }
     }
 
     @Override

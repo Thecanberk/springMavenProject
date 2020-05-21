@@ -17,7 +17,7 @@ import javax.persistence.Entity;
 @Setter
 public class User extends BaseEntity {
     private String userName;
-    private Long passWord;
+    private String passWord;
 
     public UserDTO toDTO(){
         UserDTO dto = new UserDTO();

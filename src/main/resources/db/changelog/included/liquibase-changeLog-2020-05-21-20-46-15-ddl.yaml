@@ -1,6 +1,6 @@
 databaseChangeLog:
 - changeSet:
-    id: 1589125469575-1
+    id: 1590093988572-1
     author: canberkesmeliler (generated)
     changes:
     - createTable:
@@ -17,7 +17,7 @@ databaseChangeLog:
             type: BIGINT
         tableName: revinfo
 - changeSet:
-    id: 1589125469575-2
+    id: 1590093988572-2
     author: canberkesmeliler (generated)
     changes:
     - createTable:
@@ -40,13 +40,13 @@ databaseChangeLog:
             type: BIGINT
         - column:
             name: pass_word
-            type: BIGINT
+            type: VARCHAR(255)
         - column:
             name: user_name
             type: VARCHAR(255)
         tableName: user
 - changeSet:
-    id: 1589125469575-3
+    id: 1590093988572-3
     author: canberkesmeliler (generated)
     changes:
     - createTable:
@@ -71,13 +71,13 @@ databaseChangeLog:
             type: datetime
         - column:
             name: pass_word
-            type: BIGINT
+            type: VARCHAR(255)
         - column:
             name: user_name
             type: VARCHAR(255)
         tableName: user_aud
 - changeSet:
-    id: 1589125469575-4
+    id: 1590093988572-4
     author: canberkesmeliler (generated)
     changes:
     - addForeignKeyConstraint:
